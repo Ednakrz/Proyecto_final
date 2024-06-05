@@ -12,7 +12,7 @@ Argumentos:
 """
 
 import argparse
-import dna_transposon import transposon_insersion
+from operations.DNA_transposon import transposon_insersion
 from utils.file_io import read_dna_sequence
 
 
