@@ -1,77 +1,47 @@
 """
-file_io.py: Funciones para manejar operaciones de entrada/salida de archivos de ADN.
 
-Este módulo provee funcionalidades para leer y escribir secuencias de ADN desde y hacia
-archivos, asegurando que las secuencias sean válidas y estén bien formateadas.
+DESCRIPTION
+    This script counts the occurrence of nucleotides 'A', 'T', 'G' and 'C' in a file with a .txt extension.
+    The file is provided as a positional argument from the command line.
 
-Funciones:
-    read_dna_sequence(filename) - Lee una secuencia de ADN de un archivo.
-    write_dna_sequence(filename, sequence) - Escribe una secuencia de ADN en un archivo.
-    
-Ejemplos de uso están disponibles en el bloque principal del módulo.
-
-Autores: [Tu Nombre]
-Versión: 1.0
 """
 
-# imports
 
-# meta-info
-__author__ = "Tu Nombre"
-__version__ = "1.0"
+# library
+import argparse
 
-# global vars
+# main
 
-# functions internal
+def leer_archivo():
+    # Create ArgumentParser object
+    parser = argparse.ArgumentParser(
+        description='Count occurrences of DNA symbols in a file.')
 
-# main functions
+    # Add argument for input file
+    parser.add_argument('inputfile', type=str,
+                        help='Path to the input file containing DNA sequences.')
 
-def read_dna_sequence(filename):
-    """
-    Lee una secuencia de ADN de un archivo de texto.
-    
-    Args:
-        filename (str): El nombre del archivo del cual leer la secuencia.
-        
-    Returns:
-        str: La secuencia de ADN contenida en el archivo.
-        
-    Raises:
-        FileNotFoundError: Si el archivo especificado no se encuentra.
-        ValueError: Si el archivo está vacío o contiene caracteres no válidos.
-    """
-    with open(filename, 'r') as file:
-        sequence = file.read().strip().upper()
-    if not sequence:
-        raise ValueError("El archivo está vacío.")
-    if any(char not in 'ACGT' for char in sequence):
-        raise ValueError("La secuencia contiene caracteres no válidos.")
-    return sequence
+    # Add optional argument for nucleotides of interest
+    parser.add_argument('-n', '--nucleotides', nargs='+', default=['A', 'T', 'G', 'C'],
+                        choices=['A', 'T', 'G', 'C', 'a', 't', 'g', 'c'],
+                        help='List of nucleotides to count. Default: A, T, G, C.')
 
-def write_dna_sequence(filename, sequence):
-    """
-    Escribe una secuencia de ADN en un archivo de texto.
-    
-    Args:
-        filename (str): El nombre del archivo donde se escribirá la secuencia.
-        sequence (str): La secuencia de ADN a escribir.
-        
-    Raises:
-        IOError: Si no se puede escribir en el archivo.
-    """
-    with open(filename, 'w') as file:
-        file.write(sequence + '\n')
+    # Parse command-line arguments
+    args = parser.parse_args()
 
-if __name__ == "__main__":
-    # Bloques de prueba para demostrar la funcionalidad del módulo.
-    
-    # Suponiendo que el archivo "example_dna.txt" contiene la secuencia válida "ATCG"
+    # Read DNA sequences from the input file
     try:
-        sequence = read_dna_sequence("example_dna.txt")
-        print(f"Secuencia leída correctamente: {sequence}")
-        
-        # Ahora escribir esta secuencia a un nuevo archivo
-        write_dna_sequence("output_dna.txt", sequence)
-        print("Secuencia escrita correctamente en 'output_dna.txt'.")
-    except Exception as e:
-        print(f"Error: {str(e)}")
+        with open(args.inputfile, 'r') as file:
+            dna_sequence = file.read()
+            # Check if the file is empty
+            if len(dna_sequence) == 0:
+                print("Sorry, the file is empty.")
+                return
+            # Check if the file contains uppercase letters
+            if any(char.isupper() for char in dna_sequence):
+                # Convert the entire content to lowercase
+                dna_sequence = dna_sequence.upper()
+    except IOError as ex:
+        print("Sorry, couldn't find the file: " + ex.strerror)
+    
+    return dna_sequence
