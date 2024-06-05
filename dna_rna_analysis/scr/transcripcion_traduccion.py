@@ -12,14 +12,12 @@ Argumentos:
 """
 
 import argparse
-from operations.DNA_transposon import transposon_insersion
+from operations.DNA_transposon import transposon_insertion
 from utils.file_io import read_dna_sequence
+from operations.dna_to_rna import transcribe_dna_to_rna
+from operations.DNA_transposon import transposon_insertion
+from operations.mRNA_proteins import secuencia_de_proteinas
 
-
-import argparse
-from dna_to_rna import transcribe_dna_to_rna, find_coding_sequence
-from rna_to_protein import translate_rna_to_protein
-from utils import read_dna_sequence_from_file
 
 def main():
     parser = argparse.ArgumentParser(
@@ -36,19 +34,18 @@ def main():
     transposon_file_path = args.transposon_file
     normalize = args.normalize
 
-    try:
-        # Leer la secuencia del archivo especificado utilizando la función proporcionada por utils.py
-        dna_sequence = read_dna_sequence_from_file(dna_file_path)
-        transposon_sequence = read_dna_sequence_from_file(transposon_file_path)
-    except Exception as e:
-        print(f"Error: {str(e)}")
+    # Leer la secuencia del archivo especificado utilizando la función proporcionada por utils.py
+    dna_sequence = read_dna_sequence(dna_file_path)
+    transposon_sequence = read_dna_sequence(transposon_file_path)
+
 
 
     # Preguntar al usuario la posicion de la mutacion
     dna_length = len(dna_sequence)
     print(f"Tu secuencia tiene una longitud de {dna_length}. ¿En qué posición deseas insertar la secuencia del transposón?")
-    position = input()
-    modified_sequence = transposon_insersion(dna_sequence, seq_transposon, position)
+    position_str = input("¿En qué posición deseas insertar la secuencia del transposón? ")
+    position = int(position_str)
+    modified_sequence = transposon_insertion(dna_sequence, transposon_sequence, position)
 
 
 if __name__ == "__main__":
