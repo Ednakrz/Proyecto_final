@@ -44,31 +44,3 @@ def read_dna_sequence(filename):
     if any(char not in 'ACGT' for char in sequence):
         raise ValueError("La secuencia contiene caracteres no válidos.")
     return sequence
-
-def write_dna_sequence(filename, sequence):
-    """
-    Escribe una secuencia de ADN en un archivo de texto.
-    
-    Args:
-        filename (str): El nombre del archivo donde se escribirá la secuencia.
-        sequence (str): La secuencia de ADN a escribir.
-        
-    Raises:
-        IOError: Si no se puede escribir en el archivo.
-    """
-    with open(filename, 'w') as file:
-        file.write(sequence + '\n')
-
-if __name__ == "__main__":
-    # Bloques de prueba para demostrar la funcionalidad del módulo.
-
-    # Suponiendo que el archivo "example_dna.txt" contiene la secuencia válida "ATCG"
-    try:
-        sequence = read_dna_sequence("example_dna.txt")
-        print(f"Secuencia leída correctamente: {sequence}")
-
-        # Ahora escribir esta secuencia a un nuevo archivo
-        write_dna_sequence("output_dna.txt", sequence)
-        print("Secuencia escrita correctamente en 'output_dna.txt'.")
-    except Exception as e:
-        print(f"Error: {str(e)}")
