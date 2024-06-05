@@ -1,11 +1,9 @@
+def transposon_insertion (seq_orginal, transposon_sequence, position): 
+    parte1 = seq_orginal[:position]
+    parte2 = seq_orginal[position:]
 
-def transposon_insertion (seq_orginal,seq_transposon,posicion): 
-    parte1 = seq_orginal[:posicion]
-    parte2 = seq_orginal[posicion:]
+    unificar = parte1 + transposon_sequence + parte2 
 
-    unificar = parte1 + seq_transposon + parte2 
-
-    print (parte1, parte2)
-    print (unificar)
+    print(parte1, parte2, "\n", unificar)
 
     return unificar 
