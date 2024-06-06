@@ -50,3 +50,16 @@ python3 scr/transcripcion_traduccion.py utils/invalid_dna.txt utils/transposon_e
 ValueError: La secuencia contiene caracteres no válidos.
 
 ```
+
+### Caso de prueba 3: Traducción de ARN con codón incompleto al final
+- Descripción: Comprobar que el script maneje adecuadamente una secuencia de ARN con un codón incompleto al final.
+- Datos de entrada: Secuencia de DNA con dones completos y "AT" para el transposón.
+- Resultado esperado: El script debe imprimir un mensaje indicando que la secuencia contiene un codón incompleto.
+
+```{python}
+python3 scr/transcripcion_traduccion.py tests/dna_origen_ejemplo.txt tests/transposon_codon_incompleto.txt
+
+# Salida esperada
+Advertencia: Se encontró un codón incompleto al final de la secuencia al momento de la traducción.
+
+```

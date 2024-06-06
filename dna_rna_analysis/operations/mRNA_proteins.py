@@ -1,5 +1,6 @@
 from Bio.SeqUtils import translate
 
+
 def secuencia_de_proteinas(mrna_sequence):
     """
     Traduce una secuencia de ARN mensajero (ARNm) en una secuencia de aminoácidos.
@@ -21,13 +22,9 @@ def secuencia_de_proteinas(mrna_sequence):
     for i in range(0, len(mrna_sequence), 3):
         codon = mrna_sequence[i:i+3]
         if len(codon) != 3:
+            print("Advertencia: Se encontró un codón incompleto al final de la secuencia al momento de la traducción.")
             break
         amino_acid = translate(codon)
         protein_sequence += amino_acid
 
-
     return protein_sequence
-    
-
-
-
