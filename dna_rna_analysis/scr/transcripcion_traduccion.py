@@ -41,14 +41,14 @@ def main():
     # Preguntar al usuario la posicion de la mutacion
     dna_length = len(dna_sequence)
     print(
-        f"Tu secuencia tiene una longitud de {dna_length} nucleotidos. ¿En qué posición deseas insertar la secuencia del transposón?")
+        f"Tu secuencia tiene una longitud de {dna_length} nucleotidos.")
     position_str = input(
         "¿En qué posición deseas insertar la secuencia del transposón? ")
     position = int(position_str)
 
     #Longitud de la secuancia del transposon 
     transposn_length = len(transposon_sequence)
-    print ("Tu transposon tiene una longitud de {} nucleotidos. ".format(transposon_sequence))
+    print ("Tu transposon tiene una longitud de {} nucleotidos. ".format(transposn_length))
 
 
     # Inserción del transposón
