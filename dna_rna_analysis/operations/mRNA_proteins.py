@@ -9,6 +9,6 @@ def secuencia_de_proteinas(mrna_sequence):
             break
         amino_acid = translate(codon)
         protein_sequence += amino_acid
-    print("Secuencia de aminoácidos:", protein_sequence)
+    return protein_sequence
 
 

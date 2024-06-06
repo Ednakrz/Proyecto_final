@@ -51,7 +51,7 @@ def main():
     # Obtener la secuencia de proteínas a partir del mRNA
     protein_sequence = secuencia_de_proteinas(mrna_sequence)
 
-    print(protein_sequence)
+    print("Sequencia de aminoácidos: ", protein_sequence)
 
 if __name__ == "__main__":
     main()
