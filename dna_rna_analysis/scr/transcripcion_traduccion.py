@@ -56,12 +56,14 @@ def main():
 
     #Transcribir la secuencia sin modificar de ADN a ARN
     mrna_sequence = transcribe_dna_to_rna(dna_sequence)
+    print ("La secuencia de DNA convertida a mRNA es: ", mrna_sequence)
     # Obtener la secuencia de proteínas a partir del mRNA
     protein_sequence = secuencia_de_proteinas(mrna_sequence)
     print("La secuencia de aminoácidos de tu DNA origen es:", protein_sequence)
 
     # Transcribir la secuencia modificada de ADN a ARN
     mrna_sequence = transcribe_dna_to_rna(modified_sequence)
+    print ("La secuencia del transposon convertida a mRNA es: ", mrna_sequence)
     # Obtener la secuencia de proteínas a partir del mRNA
     protein_sequence = secuencia_de_proteinas(mrna_sequence)
     print("La secuencia de aminoácidos de tu DNA con el transposon insertado es:", protein_sequence)

@@ -1,13 +1,26 @@
-# Nombre del programa 
+#TRANSCRIPTION_TRADUCCION 
 
-Este es un script de Python diseñado para ----------- 
+Este es un script de Python diseñado para la simulación de la transposición de una secuencia de DNA de un transposon en una secuencia de DNA ingresada por el usuario, esto con la finalidad de saber cuales son los cambios que se provocan en la secuncia de aminoácidos de la secuencia original dependiendo de la posición en la que se le inserte el transposon, pudiendo obtener de manera in situ la transposición.
+
+Además este script le permite al usuario seleccionar la posición exacta de su secuencia de DNA original en la que quiere insertar su tranposon.  
 
 ## Uso
 
+El script acepta dos argumentos: 
+ -Nombre del archivo a leer que contiene la secuencia original de DNA.
+ -Nombre del archivo con la secuencia del transposon.
+
+```
+python .\transcripcion_traduccion archivo.txt archivo_transposon.txt
+```
+
+Donde 
+`[archivo]` es el nombre del archivo que contiene la seucuencia de DNA.
+`[archivo_transposon]` es el nombre del archivo que contiene la seucuencia de DNA.
 
 ## Salida
 
-El script imprimirá --------- en la consola. 
+El script imprimirá la  en la consola. 
 
 ## Control de errores
 
