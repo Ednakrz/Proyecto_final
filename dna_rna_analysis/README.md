@@ -1,4 +1,4 @@
-#TRANSCRIPCION_TRADUCCION 
+# TRANSCRIPCION_TRADUCCION 
 
 Este es un script de Python diseñado para la simulación de la transposición de una secuencia de DNA de un transposon en una secuencia de DNA ingresada por el usuario, esto con la finalidad de saber cuales son los cambios que se provocan en la secuncia de aminoácidos de la secuencia original de DNA dependiendo de la posición en la que se le inserte el transposon, pudiendo obtener de manera in situ la transposición.
 
@@ -21,14 +21,14 @@ Donde
 ## Salida
 
 El script imprimirá en la consola: 
-	-Secuencia original de DNA proporcionada por el usuario.
-	-Secuencia original del transposon proporcionada por el usuario.
-	-Longitud de la secuencia de DNA. 
-	-Longitud de la secuencia del transposon.
-	-La secuencia de DNA convertida a mRNA.
-	-La secuencia de aminoácidos de tu DNA origen.
-	-La secuencia del transposon convertida a mRNA.
-	-La secuencia de aminoácidos de la secuencia orignal de DNA con el  	 	 tranposon incertado.
+	- Secuencia original de DNA proporcionada por el usuario.
+	- Secuencia original del transposon proporcionada por el usuario.
+	- Longitud de la secuencia de DNA. 
+	- Longitud de la secuencia del transposon.
+	- La secuencia de DNA convertida a mRNA.
+	- La secuencia de aminoácidos de tu DNA origen.
+	- La secuencia del transposon convertida a mRNA.
+	- La secuencia de aminoácidos de la secuencia orignal de DNA con el  	 	 tranposon incertado.
 
 ## Control de errores
 
