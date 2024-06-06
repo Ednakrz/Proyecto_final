@@ -21,14 +21,14 @@ Donde
 ## Salida
 
 El script imprimirá en la consola: 
-	-Secuencia original de DNA proporcionada por el usuario.
-	-Secuencia original del transposon proporcionada por el usuario.
-	-Longitud de la secuencia de DNA. 
-	-Longitud de la secuencia del transposon.
-	-La secuencia de DNA convertida a mRNA.
-	-La secuencia de aminoácidos de tu DNA origen.
-	-La secuencia del transposon convertida a mRNA.
-	-La secuencia de aminoácidos de la secuencia orignal de DNA con el  	 	 tranposon incertado.
+	- Secuencia original de DNA proporcionada por el usuario.
+	- Secuencia original del transposon proporcionada por el usuario.
+	- Longitud de la secuencia de DNA. 
+	- Longitud de la secuencia del transposon.
+	- La secuencia de DNA convertida a mRNA.
+	- La secuencia de aminoácidos de tu DNA origen.
+	- La secuencia del transposon convertida a mRNA.
+	- La secuencia de aminoácidos de la secuencia orignal de DNA con el  	 	 tranposon incertado.
 
 ## Control de errores
 
