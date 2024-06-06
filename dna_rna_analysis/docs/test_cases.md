@@ -29,7 +29,7 @@ utilizados y el resultado esperado.
 
 - Descripción: Comprobar que el script puede leer correctamente una secuencia de ADN desde un archivo.
 - Datos de entrada: Archivo `example_dna.txt` con la secuencia "ATGCGTACGTTAGC".
-- Resultado esperado: El script debe leer y retornar la secuencia "ATGCGTACGTTAGC".
+- Resultado esperado: El script debe correr correctamente
 
 ```{python}
 python3 scr/transcripcion_traduccion.py utils/example_dna.txt utils/transposon_ejemplo.txt
@@ -61,5 +61,17 @@ python3 scr/transcripcion_traduccion.py tests/dna_origen_ejemplo.txt tests/trans
 
 # Salida esperada
 Advertencia: Se encontró un codón incompleto al final de la secuencia al momento de la traducción.
+
+```
+
+### Caso de prueba 4: Los archivos con los datos de enrtrada pueden contener minúsculas o mayúsculas
+- Descripción: Comprobar que el script pueda leer y manejar archivos con secuencias en minúsculas o mayúsculas
+- Datos de entrada: Secuencia de DNA en minúscula y secuencia de transposón en mayúscula.
+- Resultado esperado: El script debe correr correctamente.
+
+```{python}
+python3 scr/transcripcion_traduccion.py tests/dna_origen_ejemplo.txt tests/transposon_ejemplo.txt
+
+# Salida esperada: El programa contunúa sin imprimir errores.
 
 ```
