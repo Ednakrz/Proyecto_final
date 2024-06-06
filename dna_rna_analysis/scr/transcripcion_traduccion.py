@@ -66,7 +66,6 @@ def main():
         transposn_length))
 
    # Preguntar al usuario la posición de la mutación
-
     while True:
         try:
             position_str = input(
