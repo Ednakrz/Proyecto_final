@@ -75,3 +75,29 @@ python3 scr/transcripcion_traduccion.py tests/dna_origen_ejemplo.txt tests/trans
 # Salida esperada: El programa contunúa sin imprimir errores.
 
 ```
+
+### Caso de prueba 5: Transcripción de ADN a ARN
+- Descripción: Comprobar que el script puede transcribir correctamente una secuencia de ADN a ARN.
+- Datos de entrada: Secuencia de ADN "ATGCGTACGTTAGCC".
+- Resultado esperado: El script debe retornar la secuencia de ARN "UACGCAUGCAAUCGG".
+
+```{python}
+python3 scr/transcripcion_traduccion.py utils/example_dna.txt utils/transposon_ejemplo.txt
+
+# Salida esperada
+La secuencia de DNA convertida a mRNA es:  UACGCAUGCAAUCGG
+
+```
+
+### Caso de prueba 6: Traducción de ARN a secuencia de proteínas
+- Descripción: Verificar que el script puede traducir correctamente una secuencia de ARN a una secuencia de proteínas.
+- Datos de entrada: Secuencia de ARN "UACGCAUGCAAUCGG".
+- Resultado esperado: El script debe retornar la secuencia de proteínas "YACNR".
+
+```{python}
+python3 scr/transcripcion_traduccion.py utils/example_dna.txt utils/transposon_ejemplo.txt
+
+# Salida esperada
+La secuencia de aminoácidos del DNA origen es:  YACNR
+
+```
