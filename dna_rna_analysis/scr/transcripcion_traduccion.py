@@ -1,22 +1,38 @@
 """
-posibles.py: Script para ...
+transcripcion_traduccion.py
 
-Este script...
+VERSION del script: 1.0
 
-Uso:
-    python posibles_regiones_codificantes.py <path_to_dna_file> [--normalize]
+FECHA de la última actualización: 05/06/2024
 
-Argumentos:
-    <path_to_dna_file> : Ruta al archivo de texto que contiene la secuencia de ADN.
-    --normalize        : Opción para normalizar el contenido de AT excluyendo 'N's del c
+ATORES: 
+    -Edna Karen Rivera Zagal:  ednakrz@lcg.unam.mx
+    - Gabriel Alberto Garcia Vargas: gabrielalg@lcg.unam.mx
+
+DESCRIPCION:
+
+    Este script esta diseñado para insertar una secuencia de DNA de algun transposon en la secuencia de DNA original 
+    proporcionada por el usuario. Para posteriormente obtener la secuencia de aminoácidos que se tienen de la combinación de 
+    DNA con el transposon que se ha insertado.
+
+CATEGORIA
+    Uso de secuencias de DNA y objetos de tipo Seq.
+
+USO:
+    python scr/transcripcion_traduccion tests/archivo.txt tests/archivo_transposon.txt
+
+
+EJEMPLO: 
+    python3 scr/transcripcion_traduccion.py tests/exemple_dna.txt tests/transposon_ejemplo.txt
+    
 """
 
 import argparse
+
 from operations.DNA_transposon import transposon_insertion
-from utils.file_io import read_dna_sequence
 from operations.dna_to_rna import transcribe_dna_to_rna
-from operations.DNA_transposon import transposon_insertion
 from operations.mRNA_proteins import secuencia_de_proteinas
+from utils.file_io import read_dna_sequence
 
 
 def main():
@@ -50,7 +66,7 @@ def main():
         transposn_length))
 
    # Preguntar al usuario la posición de la mutación
-    
+
     while True:
         try:
             position_str = input(
