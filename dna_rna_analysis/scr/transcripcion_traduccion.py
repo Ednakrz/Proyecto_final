@@ -41,10 +41,15 @@ def main():
     # Preguntar al usuario la posicion de la mutacion
     dna_length = len(dna_sequence)
     print(
-        f"Tu secuencia tiene una longitud de {dna_length}. ¿En qué posición deseas insertar la secuencia del transposón?")
+        f"Tu secuencia tiene una longitud de {dna_length} nucleotidos. ¿En qué posición deseas insertar la secuencia del transposón?")
     position_str = input(
         "¿En qué posición deseas insertar la secuencia del transposón? ")
     position = int(position_str)
+
+    #Longitud de la secuancia del transposon 
+    transposn_length = len(transposon_sequence)
+    print ("Tu transposon tiene una longitud de {} nucleotidos. ".format(transposon_sequence))
+
 
     # Inserción del transposón
     modified_sequence = transposon_insertion(dna_sequence, transposon_sequence, position)
@@ -53,13 +58,13 @@ def main():
     mrna_sequence = transcribe_dna_to_rna(dna_sequence)
     # Obtener la secuencia de proteínas a partir del mRNA
     protein_sequence = secuencia_de_proteinas(mrna_sequence)
-    print("La secuencia de aminoácidos de tu DNA origen es:\n ", protein_sequence)
+    print("La secuencia de aminoácidos de tu DNA origen es:", protein_sequence)
 
     # Transcribir la secuencia modificada de ADN a ARN
     mrna_sequence = transcribe_dna_to_rna(modified_sequence)
     # Obtener la secuencia de proteínas a partir del mRNA
     protein_sequence = secuencia_de_proteinas(mrna_sequence)
-    print("La secuencia de aminoácidos de tu DNA con el transposon insertado es:\n ", protein_sequence)
+    print("La secuencia de aminoácidos de tu DNA con el transposon insertado es:", protein_sequence)
 
     
 
