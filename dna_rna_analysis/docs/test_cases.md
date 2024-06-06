@@ -32,7 +32,7 @@ utilizados y el resultado esperado.
 - Resultado esperado: El script debe correr correctamente
 
 ```{python}
-python3 scr/transcripcion_traduccion.py utils/example_dna.txt utils/transposon_ejemplo.txt
+python3 scr/transcripcion_traduccion.py tests/example_dna.txt tests/transposon_ejemplo.txt
 
 # Salida esperada: El programa contunúa sin imprimir errores
 
@@ -44,7 +44,7 @@ python3 scr/transcripcion_traduccion.py utils/example_dna.txt utils/transposon_e
 - Resultado esperado: El script debe lanzar un ValueError indicando que la secuencia contiene caracteres no válidos.
 
 ```{python}
-python3 scr/transcripcion_traduccion.py utils/invalid_dna.txt utils/transposon_ejemplo.txt
+python3 scr/transcripcion_traduccion.py tests/invalid_dna.txt tests/transposon_ejemplo.txt
 
 # Salida esperada
 ValueError: La secuencia contiene caracteres no válidos.
@@ -82,7 +82,7 @@ python3 scr/transcripcion_traduccion.py tests/dna_origen_ejemplo.txt tests/trans
 - Resultado esperado: El script debe retornar la secuencia de ARN "UACGCAUGCAAUCGG".
 
 ```{python}
-python3 scr/transcripcion_traduccion.py utils/example_dna.txt utils/transposon_ejemplo.txt
+python3 scr/transcripcion_traduccion.py tests/example_dna.txt tests/transposon_ejemplo.txt
 
 # Salida esperada
 La secuencia de DNA convertida a mRNA es:  UACGCAUGCAAUCGG
@@ -95,9 +95,37 @@ La secuencia de DNA convertida a mRNA es:  UACGCAUGCAAUCGG
 - Resultado esperado: El script debe retornar la secuencia de proteínas "YACNR".
 
 ```{python}
-python3 scr/transcripcion_traduccion.py utils/example_dna.txt utils/transposon_ejemplo.txt
+python3 scr/transcripcion_traduccion.py tests/example_dna.txt tests/transposon_ejemplo.txt
 
 # Salida esperada
 La secuencia de aminoácidos del DNA origen es:  YACNR
+
+```
+
+### Caso de prueba 7: Inserción de transposón en posición válida
+- Descripción: Probar que el script puede insertar correctamente una secuencia de transposón en una posición específica de la secuencia de ADN.
+- Datos de entrada: Archivo example_dna.txt, archivo transposon.txt y posición de inserción: 8
+- Resultado esperado: El script debe retornar la secuencia modificada "ATGCGTTTAACGTTAGC".
+
+
+```{python}
+python3 scr/transcripcion_traduccion.py tests/example_dna.txt tests/transposon_ejemplo.txt
+
+# Salida esperada
+La secuencia de aminoácidos del DNA con el transposon insertado es:  YACKYILSISVT*RLSDANR
+
+```
+
+### Caso de prueba 8: Inserción de transposón en posición fuera de rango
+- Descripción: PDescripción: Verificar que el script maneje adecuadamente un intento de inserción de transposón en una posición fuera del rango de la secuencia de ADN.
+- Datos de entrada: Archivo example_dna.txt, archivo transposon.txt y posición de inserción: 1000
+- Resultado esperado: El script debe insistir al usuario en ingresar un valor dentro del rango permitido.
+
+
+```{python}
+python3 scr/transcripcion_traduccion.py tests/example_dna.txt tests/transposon_ejemplo.txt
+
+# Salida esperada
+Por favor, introduce un número entero válido para la posición.
 
 ```
