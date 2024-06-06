@@ -31,8 +31,6 @@ def transposon_insertion (seq_orginal,seq_transposon,posicion):
 
     unificar = parte1 + seq_transposon + parte2 
 
-    print (parte1, parte2)
-    print (unificar)
     longitud = len (unificar)
     print ("La longitud de tu cadena de DNA con el transposon es: {}".format(longitud))
 
