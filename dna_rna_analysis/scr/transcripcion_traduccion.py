@@ -47,15 +47,21 @@ def main():
     position = int(position_str)
 
     # Inserción del transposón
-    modified_sequence = transposon_insertion(
-        dna_sequence, transposon_sequence, position)
+    modified_sequence = transposon_insertion(dna_sequence, transposon_sequence, position)
+
+    #Transcribir la secuencia sin modificar de ADN a ARN
+    mrna_sequence = transcribe_dna_to_rna(dna_sequence)
+    # Obtener la secuencia de proteínas a partir del mRNA
+    protein_sequence = secuencia_de_proteinas(mrna_sequence)
+    print("La secuencia de aminoácidos de tu DNA origen es:\n ", protein_sequence)
 
     # Transcribir la secuencia modificada de ADN a ARN
     mrna_sequence = transcribe_dna_to_rna(modified_sequence)
     # Obtener la secuencia de proteínas a partir del mRNA
     protein_sequence = secuencia_de_proteinas(mrna_sequence)
+    print("La secuencia de aminoácidos de tu DNA con el transposon insertado es:\n ", protein_sequence)
 
-    print("Sequencia de aminoácidos: ", protein_sequence)
+    
 
 
 if __name__ == "__main__":
