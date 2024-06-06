@@ -15,5 +15,6 @@ def transcribe_dna_to_rna(dna_sequence):
     str: La secuencia de ARN resultante de la transcripción del ADN.
     """
     # Reemplazar todas las bases de acuerdo a las reglas especificadas
-    rna_sequence = dna_sequence.replace('A', 'u').replace('C', 'g').replace('G', 'c').replace('T', 'a')
+    rna_sequence = dna_sequence.replace('A', 'u').replace(
+        'C', 'g').replace('G', 'c').replace('T', 'a')
     return rna_sequence.upper()
