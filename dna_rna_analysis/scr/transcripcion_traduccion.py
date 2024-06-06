@@ -38,40 +38,48 @@ def main():
     dna_sequence = read_dna_sequence(dna_file_path)
     transposon_sequence = read_dna_sequence(transposon_file_path)
 
-    print ("Tu secuencia de DNA proporcionada es:", dna_sequence)
-    print ("Tu secuencia de transposon es: ", transposon_sequence)
-    
-    # Preguntar al usuario la posicion de la mutacion
+    # Secuencia de DNA y longitud
+    print("La secuencia de DNA proporcionada es: ", dna_sequence)
     dna_length = len(dna_sequence)
-    print(
-        f"Tu secuencia tiene una longitud de {dna_length} nucleotidos.")
-    position_str = input(
-        "¿En qué posición deseas insertar la secuencia del transposón? ")
-    position = int(position_str)
+    print(f"La secuencia tiene una longitud de {dna_length} nucleótidos. \n")
 
-    #Longitud de la secuancia del transposon 
+    # Secuencia de Transposón y longitud
+    print("La secuencia de transposon es: ", transposon_sequence)
     transposn_length = len(transposon_sequence)
-    print ("Tu transposon tiene una longitud de {} nucleotidos. ".format(transposn_length))
+    print("La transposon tiene una longitud de {} nucleotidos. \n".format(
+        transposn_length))
 
+   # Preguntar al usuario la posición de la mutación
+    
+    while True:
+        try:
+            position_str = input(
+                "¿En qué posición deseas insertar la secuencia del transposón? ")
+            position = int(position_str)
+            if position < 0 or position > dna_length:
+                raise ValueError(
+                    f"La posición debe estar dentro del rango [0, {dna_length}].")
+            break  # Salir del bucle si la entrada es válida
+        except ValueError:
+            print("Por favor, introduce un número entero válido para la posición.")
 
     # Inserción del transposón
-    modified_sequence = transposon_insertion(dna_sequence, transposon_sequence, position)
+    modified_sequence = transposon_insertion(
+        dna_sequence, transposon_sequence, position)
 
-    #Transcribir la secuencia sin modificar de ADN a ARN
+    # Transcribir la secuencia sin modificar de ADN a ARN
     mrna_sequence = transcribe_dna_to_rna(dna_sequence)
-    print ("La secuencia de DNA convertida a mRNA es: ", mrna_sequence)
+    print("\nLa secuencia de DNA convertida a mRNA es: ", mrna_sequence)
     # Obtener la secuencia de proteínas a partir del mRNA
     protein_sequence = secuencia_de_proteinas(mrna_sequence)
-    print("La secuencia de aminoácidos de tu DNA origen es:", protein_sequence)
+    print("\nLa secuencia de aminoácidos del DNA origen es: ", protein_sequence)
 
     # Transcribir la secuencia modificada de ADN a ARN
     mrna_sequence = transcribe_dna_to_rna(modified_sequence)
-    print ("La secuencia del transposon convertida a mRNA es: ", mrna_sequence)
+    print("\nLa secuencia del transposon convertida a mRNA es: ", mrna_sequence)
     # Obtener la secuencia de proteínas a partir del mRNA
     protein_sequence = secuencia_de_proteinas(mrna_sequence)
-    print("La secuencia de aminoácidos de tu DNA con el transposon insertado es:", protein_sequence)
-
-    
+    print("\nLa secuencia de aminoácidos del DNA con el transposon insertado es: ", protein_sequence)
 
 
 if __name__ == "__main__":

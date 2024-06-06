@@ -32,7 +32,7 @@ utilizados y el resultado esperado.
 - Resultado esperado: El script debe leer y retornar la secuencia "ATGCGTACGTTAGC".
 
 ```{python}
-python3 transcripcion_traduccion.py utils/example_dna.txt utils/transposon_ejemplo.txt
+python3 scr/transcripcion_traduccion.py utils/example_dna.txt utils/transposon_ejemplo.txt
 
 # Salida esperada: El programa contunúa sin imprimir errores
 
@@ -44,7 +44,7 @@ python3 transcripcion_traduccion.py utils/example_dna.txt utils/transposon_ejemp
 - Resultado esperado: El script debe lanzar un ValueError indicando que la secuencia contiene caracteres no válidos.
 
 ```{python}
-python3 transcripcion_traduccion.py utils/invalid_dna.txt utils/transposon_ejemplo.txt
+python3 scr/transcripcion_traduccion.py utils/invalid_dna.txt utils/transposon_ejemplo.txt
 
 # Salida esperada
 ValueError: La secuencia contiene caracteres no válidos.
