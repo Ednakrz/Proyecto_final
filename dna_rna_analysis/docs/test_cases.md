@@ -25,3 +25,15 @@ de prueba incluye una descripción del caso de prueba, los datos de entrada
 utilizados y el resultado esperado.
     
 
+### Caso de prueba 1: Lectura de secuencia de ADN válida
+
+- Descripción: Comprobar que el script puede leer correctamente una secuencia de ADN desde un archivo.
+- Datos de entrada: Archivo `example_dna.txt` con la secuencia "ATGCGTACGTTAGC".
+- Resultado esperado: El script debe leer y retornar la secuencia "ATGCGTACGTTAGC".
+
+```{python}
+python3 transcripcion_traduccion.py utils/example_dna.txt utils/transposon_ejemplo.txt
+
+# Salida esperada: El programa contunúa sin imprimir errores
+
+```
