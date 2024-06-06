@@ -38,6 +38,9 @@ def main():
     dna_sequence = read_dna_sequence(dna_file_path)
     transposon_sequence = read_dna_sequence(transposon_file_path)
 
+    print ("Tu secuencia de DNA proporcionada es:", dna_sequence)
+    print ("Tu secuencia de transposon es: ", transposon_sequence)
+    
     # Preguntar al usuario la posicion de la mutacion
     dna_length = len(dna_sequence)
     print(
